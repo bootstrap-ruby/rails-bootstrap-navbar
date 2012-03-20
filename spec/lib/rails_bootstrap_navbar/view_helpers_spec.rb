@@ -84,6 +84,18 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 		end
   end
 
+  describe "menu_text" do
+    it "should render text within p tags" do
+      menu_text("Strapline!").should eql("<p>Strapline!</p>")
+    end
+
+    it "should be able to cope with a block too" do
+      menu_text do
+				"I've been rendered programmatically!"
+      end.should eql("<p>I've been rendered programmatically!</p>")
+    end
+  end
+
   describe "rendering forms ok" do
 		it "should not escape anything unexpectedly" do
 	    nav_bar do
