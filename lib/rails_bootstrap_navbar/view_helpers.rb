@@ -24,6 +24,12 @@ module RailsBootstrapNavbar
 			end
 	  end
 
+	  def drop_down(name)
+			content_tag :li, :class => "dropdown" do
+				drop_down_link(name) + drop_down_list {yield}
+			end
+	  end
+
 	  private
 
 	  def nav_bar_div(fixed, &block)
@@ -86,6 +92,20 @@ module RailsBootstrapNavbar
 
 	  def is_active?(path)
 			"active" if current_page?(path)
+	  end
+
+	  def name_and_caret(name)
+			"#{name} #{content_tag(:b, :class => "caret"){}}".html_safe
+	  end
+
+	  def drop_down_link(name)
+			link_to(name_and_caret(name), "#", :class => "dropdown-toggle", "data-toggle" => "dropdown")
+	  end
+
+	  def drop_down_list(&block)
+			content_tag :ul, :class => "dropdown-menu" do
+				yield
+			end
 	  end
 	end
 end

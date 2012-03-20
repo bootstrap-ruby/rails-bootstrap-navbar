@@ -69,6 +69,14 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       menu_item("Home", "/").should eql('<li class="active"><a href="/">Home</a></li>')
     end
   end
+
+  describe "drop_down" do
+    it "should do render the proper drop down code" do
+      drop_down "Products" do
+				menu_item "Latest", "/"
+      end.gsub(/\s/,'').downcase.should eql(DROPDOWN_MENU.gsub(/\s/,'').downcase)
+    end
+  end
 end
 
 # HTML output
@@ -157,4 +165,18 @@ PLAIN_NAVBAR_WITH_ITEM = <<-HTML
 		</div>
 	</div>
 </div>
+HTML
+
+DROPDOWN_MENU = <<-HTML
+<li class="dropdown">
+  <a href="#"
+        class="dropdown-toggle"
+        data-toggle="dropdown">
+        Products
+        <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="/">Latest</a></li>
+  </ul>
+</li>
 HTML
