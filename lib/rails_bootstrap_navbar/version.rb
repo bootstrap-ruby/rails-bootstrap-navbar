@@ -1,3 +1,3 @@
 module RailsBootstrapNavbar
-  VERSION = "0.0.1.alpha"
+  VERSION = "0.0.3.alpha"
 end

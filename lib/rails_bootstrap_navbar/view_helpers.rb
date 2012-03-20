@@ -5,8 +5,8 @@ module RailsBootstrapNavbar
 
 	  def nav_bar(*args)
 			nav_bar_div(args) do
-				navbar_inner_div do
-					container_div
+				navbar_inner_div(args) do
+					container_div(args)
 				end
 			end
 	  end
@@ -19,15 +19,25 @@ module RailsBootstrapNavbar
 			end
 	  end
 
-	  def navbar_inner_div(&block)
+	  def navbar_inner_div(*args, &block)
 			content_tag :div, :class => "navbar-inner" do
 				yield
 			end
 	  end
 
-	  def container_div(&block)
+	  def container_div(*args, &block)
+			options = args.flatten.extract_options!
+
+			if options[:brand].present?
+				brand_link = link_to(options[:brand], "/", :class => "brand")
+			end
+
 			content_tag :div, :class => "container" do
-				yield if block_given?
+				if block_given?
+					brand_link + yield
+				else
+					brand_link
+				end
 			end
 	  end
 

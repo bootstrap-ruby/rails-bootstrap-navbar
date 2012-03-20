@@ -20,6 +20,10 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
     it "should set the fixed position to bottom" do
       nav_bar(:fixed => :bottom).gsub(/\s/,'').downcase.should eql(FIXED_BOTTOM_NAVBAR.gsub(/\s/,'').downcase)
     end
+
+    it "should add the brand name and link it to the home page" do
+      nav_bar(:brand => "Ninety Ten").gsub(/\s/,'').downcase.should eql(NAVBAR_WITH_BRAND.gsub(/\s/,'').downcase)
+    end
   end
 end
 
@@ -47,6 +51,18 @@ FIXED_BOTTOM_NAVBAR = <<-HTML
 <div class="navbar navbar-fixed-bottom">
   <div class="navbar-inner">
     <div class="container">
+    </div>
+  </div>
+</div>
+HTML
+
+NAVBAR_WITH_BRAND = <<-HTML
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+			<a href="/" class="brand">
+			  Ninety Ten
+			</a>
     </div>
   </div>
 </div>
