@@ -49,6 +49,18 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       end.should eql('<ul class="nav pull-left"><p>This is a menu group</p></ul>')
     end
   end
+
+  describe "menu_item" do
+		before { self.stub!("current_page?").and_return(true) }
+    it "should return a link within an li tag" do
+			self.stub!("current_page?").and_return(false)
+      menu_item("Home", "/").should eql('<li><a href="/">Home</a></li>')
+    end
+    it "should return the link with class 'active' if on current page" do
+      self.stub!("current_page?").and_return(true)
+      menu_item("Home", "/").should eql('<li class="active"><a href="/">Home</a></li>')
+    end
+  end
 end
 
 # HTML output

@@ -18,6 +18,12 @@ module RailsBootstrapNavbar
 			content_tag(:ul, :class => "nav#{pull_class}") {yield.html_safe}
 	  end
 
+	  def menu_item(name, path)
+			content_tag :li, :class => is_active?(path) do
+				link_to name, path
+			end
+	  end
+
 	  private
 
 	  def nav_bar_div(fixed, &block)
@@ -76,6 +82,10 @@ module RailsBootstrapNavbar
 			content_tag(:div, :class => "nav-collapse") do
 				output.join("\n").html_safe
 			end
+	  end
+
+	  def is_active?(path)
+			"active" if current_page?(path)
 	  end
 	end
 end
