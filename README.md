@@ -161,6 +161,8 @@ This is the 'meat' of the code where you define your menu items.
 
 You can group menu items in theoretical boxes which you can apply logic to - e.g. show different collections for logged in users/logged out users, or simply right align a group.
 
+The active menu item will be inferred from the link for now.
+
 ````ruby
 <%= nav_bar :fixed => :top, :brand => "Ninety Ten" do %>
 	<% menu_group do %>
