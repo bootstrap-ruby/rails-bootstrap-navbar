@@ -8,6 +8,7 @@ include ActionView::Helpers
 include ActionView::Context
 
 describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
+	before { self.stub!("current_page?").and_return(false) }
   describe "nav_bar" do
     it "should return a basic bootstrap navbar" do
 			nav_bar.gsub(/\s/,'').downcase.should eql(BASIC_NAVBAR.gsub(/\s/,'').downcase)
@@ -34,6 +35,14 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 				"<p>Passing a block</p>"
 			end.gsub(/\s/,'').downcase.should eql(RESPONSIVE_NAVBAR_WITH_BLOCK.gsub(/\s/,'').downcase)
     end
+
+    it "should render contained items" do
+      nav_bar do
+				menu_group do
+					menu_item "Home", "/"
+				end
+      end.gsub(/\s/,'').downcase.should eql(PLAIN_NAVBAR_WITH_ITEM.gsub(/\s/,'').downcase)
+    end
   end
 
   describe "menu_group" do
@@ -51,7 +60,6 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
   end
 
   describe "menu_item" do
-		before { self.stub!("current_page?").and_return(true) }
     it "should return a link within an li tag" do
 			self.stub!("current_page?").and_return(false)
       menu_item("Home", "/").should eql('<li><a href="/">Home</a></li>')
@@ -134,5 +142,19 @@ RESPONSIVE_NAVBAR_WITH_BLOCK = <<-HTML
       </div>
     </div>
   </div>
+</div>
+HTML
+
+PLAIN_NAVBAR_WITH_ITEM = <<-HTML
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<ul class="nav">
+				<li>
+					<a href="/">Home</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 HTML
