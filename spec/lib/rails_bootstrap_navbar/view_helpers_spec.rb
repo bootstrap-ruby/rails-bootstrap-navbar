@@ -42,6 +42,12 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 				"<p>This is a menu group</p>"
       end.should eql('<ul class="nav"><p>This is a menu group</p></ul>')
     end
+
+    it "should return a ul with class .pull-left when passed the {:pull => :left} option" do
+			menu_group(:pull => :left) do
+				"<p>This is a menu group</p>"
+      end.should eql('<ul class="nav pull-left"><p>This is a menu group</p></ul>')
+    end
   end
 end
 

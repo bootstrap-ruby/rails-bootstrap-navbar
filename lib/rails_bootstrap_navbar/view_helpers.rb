@@ -3,9 +3,7 @@ require "rails_bootstrap_navbar/version"
 module RailsBootstrapNavbar
 	module ViewHelpers
 
-	  def nav_bar(*args, &block)
-			options = args.flatten.extract_options!
-
+	  def nav_bar(options={}, &block)
 			nav_bar_div(options[:fixed]) do
 				navbar_inner_div do
 					container_div(options[:brand], options[:responsive]) do
@@ -15,8 +13,9 @@ module RailsBootstrapNavbar
 			end
 	  end
 
-	  def menu_group(&block)
-			content_tag(:ul, :class => "nav") {yield.html_safe}
+	  def menu_group(options={}, &block)
+			pull_class = " pull-#{options[:pull].to_s}" if options[:pull].present?
+			content_tag(:ul, :class => "nav#{pull_class}") {yield.html_safe}
 	  end
 
 	  private
