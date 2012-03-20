@@ -24,6 +24,16 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
     it "should add the brand name and link it to the home page" do
       nav_bar(:brand => "Ninety Ten").gsub(/\s/,'').downcase.should eql(NAVBAR_WITH_BRAND.gsub(/\s/,'').downcase)
     end
+
+    it "should add the buttons etc for a responsive layout with no block passed" do
+      nav_bar(:responsive => true).gsub(/\s/,'').downcase.should eql(RESPONSIVE_NAVBAR.gsub(/\s/,'').downcase)
+    end
+
+    it "should add the buttons etc for a responsive layout with block passed" do
+      nav_bar(:responsive => true) do
+				"<p>Passing a block</p>"
+			end.gsub(/\s/,'').downcase.should eql(RESPONSIVE_NAVBAR_WITH_BLOCK.gsub(/\s/,'').downcase)
+    end
   end
 end
 
@@ -63,6 +73,39 @@ NAVBAR_WITH_BRAND = <<-HTML
 			<a href="/" class="brand">
 			  Ninety Ten
 			</a>
+    </div>
+  </div>
+</div>
+HTML
+
+RESPONSIVE_NAVBAR = <<-HTML
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse">
+      </div>
+    </div>
+  </div>
+</div>
+HTML
+
+RESPONSIVE_NAVBAR_WITH_BLOCK = <<-HTML
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse">
+				<p>Passing a block</p>
+      </div>
     </div>
   </div>
 </div>
