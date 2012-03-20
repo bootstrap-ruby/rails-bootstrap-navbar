@@ -15,6 +15,10 @@ module RailsBootstrapNavbar
 			end
 	  end
 
+	  def menu_group(&block)
+			content_tag(:ul, :class => "nav") {yield.html_safe}
+	  end
+
 	  private
 
 	  def nav_bar_div(fixed, &block)

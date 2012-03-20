@@ -35,6 +35,14 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 			end.gsub(/\s/,'').downcase.should eql(RESPONSIVE_NAVBAR_WITH_BLOCK.gsub(/\s/,'').downcase)
     end
   end
+
+  describe "menu_group" do
+    it "should return a ul with the class 'nav'" do
+      menu_group do
+				"<p>This is a menu group</p>"
+      end.should eql('<ul class="nav"><p>This is a menu group</p></ul>')
+    end
+  end
 end
 
 # HTML output
