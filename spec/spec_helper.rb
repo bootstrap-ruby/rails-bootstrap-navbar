@@ -1,0 +1,1 @@
+require 'rails_bootstrap_navbar'
