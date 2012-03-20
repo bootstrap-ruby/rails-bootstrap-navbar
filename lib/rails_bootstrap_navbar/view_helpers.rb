@@ -30,6 +30,10 @@ module RailsBootstrapNavbar
 			end
 	  end
 
+	  def menu_divider
+			content_tag :li, "", :class => "divider-vertical"
+	  end
+
 	  private
 
 	  def nav_bar_div(fixed, &block)

@@ -77,6 +77,12 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       end.gsub(/\s/,'').downcase.should eql(DROPDOWN_MENU.gsub(/\s/,'').downcase)
     end
   end
+
+  describe "menu_divider" do
+		it "should render <li class='divider-vertical'></li>" do
+		  menu_divider.should eql '<li class="divider-vertical"></li>'
+		end
+  end
 end
 
 # HTML output
