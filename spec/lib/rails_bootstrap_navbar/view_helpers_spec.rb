@@ -83,6 +83,16 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 		  menu_divider.should eql '<li class="divider-vertical"></li>'
 		end
   end
+
+  describe "rendering forms ok" do
+		it "should not escape anything unexpectedly" do
+	    nav_bar do
+				form_tag "/", :method => 'get' do |f|
+					f.text_field :search, "stub"
+				end
+	    end.gsub(/\s/,'').downcase.should eql(PLAIN_NAVBAR_WITH_FORM.gsub(/\s/,'').downcase)
+	  end
+  end
 end
 
 # HTML output
@@ -185,4 +195,19 @@ DROPDOWN_MENU = <<-HTML
     <li><a href="/">Latest</a></li>
   </ul>
 </li>
+HTML
+
+PLAIN_NAVBAR_WITH_FORM = <<-HTML
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<form accept-charset="utf-8" action="/" method="get">
+				<div style="margin:0;padding:0;display:inline">
+					<input name="utf8" type="hidden" value="&#x2713;"/>
+				</div>
+				<input id="search_stub" name="search[stub]" size="30" type="text"/>
+			</form>
+		</div>
+	</div>
+</div>
 HTML
