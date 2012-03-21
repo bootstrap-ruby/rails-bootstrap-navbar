@@ -47,6 +47,14 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 				end
       end.gsub(/\s/,'').downcase.should eql(PLAIN_NAVBAR_WITH_ITEM.gsub(/\s/,'').downcase)
     end
+
+    it "should still render the brand name even with other options turned on" do
+			nav_bar(:brand => "Something") do
+				menu_group do
+					menu_item "Home", "/"
+				end
+      end.gsub(/\s/,'').downcase.should eql(BRANDED_NAVBAR_WITH_ITEM.gsub(/\s/,'').downcase)
+    end
   end
 
   describe "menu_group" do
@@ -198,6 +206,23 @@ PLAIN_NAVBAR_WITH_ITEM = <<-HTML
 <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
+			<ul class="nav">
+				<li>
+					<a href="/">Home</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+HTML
+
+BRANDED_NAVBAR_WITH_ITEM = <<-HTML
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a href="/" class="brand">
+			  Something
+			</a>
 			<ul class="nav">
 				<li>
 					<a href="/">Home</a>

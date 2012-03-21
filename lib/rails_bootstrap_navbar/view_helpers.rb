@@ -64,7 +64,8 @@ module RailsBootstrapNavbar
 			output = []
 			if responsive
 				output << responsive_button
-				output << responsive_div(brand) {yield}
+				output << brand_link(brand)
+				output << responsive_div {yield}
 			else
 				output << brand_link(brand)
 				output << yield
@@ -91,9 +92,8 @@ module RailsBootstrapNavbar
 	      </a>}
 	  end
 
-	  def responsive_div(brand, &block)
+	  def responsive_div(&block)
 			output = []
-			output << brand_link(brand)
 			output << yield
 			content_tag(:div, :class => "nav-collapse") do
 				output.join("\n").html_safe
