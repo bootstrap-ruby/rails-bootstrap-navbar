@@ -26,6 +26,10 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       nav_bar(:brand => "Ninety Ten").gsub(/\s/,'').downcase.should eql(NAVBAR_WITH_BRAND.gsub(/\s/,'').downcase)
     end
 
+    it "should set the container to fluid" do
+      nav_bar(:fluid => :true).gsub(/\s/,'').downcase.should eql(BASIC_NAVBAR_FLUID.gsub(/\s/,'').downcase)
+    end
+
     it "should add the buttons etc for a responsive layout with no block passed" do
       nav_bar(:responsive => true).gsub(/\s/,'').downcase.should eql(RESPONSIVE_NAVBAR.gsub(/\s/,'').downcase)
     end
@@ -131,6 +135,15 @@ FIXED_BOTTOM_NAVBAR = <<-HTML
 <div class="navbar navbar-fixed-bottom">
   <div class="navbar-inner">
     <div class="container">
+    </div>
+  </div>
+</div>
+HTML
+
+BASIC_NAVBAR_FLUID= <<-HTML
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
     </div>
   </div>
 </div>

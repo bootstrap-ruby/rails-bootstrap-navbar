@@ -6,7 +6,7 @@ module RailsBootstrapNavbar
 	  def nav_bar(options={}, &block)
 			nav_bar_div(options[:fixed]) do
 				navbar_inner_div do
-					container_div(options[:brand], options[:responsive]) do
+					container_div(options[:brand], options[:responsive], options[:fluid]) do
 						yield if block_given?
 					end
 				end
@@ -54,8 +54,8 @@ module RailsBootstrapNavbar
 			end
 	  end
 
-	  def container_div(brand, responsive, &block)
-			content_tag :div, :class => "container" do
+	  def container_div(brand, responsive, fluid, &block)
+			content_tag :div, :class => "container#{"-fluid" if fluid}" do
 				container_div_with_block(brand, responsive) {yield}
 			end
 	  end
