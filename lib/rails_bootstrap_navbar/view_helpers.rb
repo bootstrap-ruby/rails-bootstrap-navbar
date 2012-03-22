@@ -30,6 +30,14 @@ module RailsBootstrapNavbar
 			end
 	  end
 
+	  def drop_down_divider
+			content_tag :li, "", :class => "divider"
+	  end
+
+	  def drop_down_header(text)
+			content_tag :li, text, :class => "nav-header"
+	  end
+
 	  def menu_divider
 			content_tag :li, "", :class => "divider-vertical"
 	  end
