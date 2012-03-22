@@ -64,14 +64,14 @@ In your view file (most likely application.html.erb) to get a basic navbar set u
 ````
 
 Which will render:
-````
+<code>
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
     </div>
   </div>
 </div>
-````
+</code>
 
 ### Fixed navbar
 
@@ -88,25 +88,25 @@ Or
 ````
 
 To render:
-````
+<code>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
     </div>
   </div>
 </div>
-````
+</code>
 
 Or
 
-````
+<code>
 <div class="navbar navbar-fixed-bottom">
   <div class="navbar-inner">
     <div class="container">
     </div>
   </div>
 </div>
-````
+</code>
 
 
 ### Brand name
@@ -118,7 +118,7 @@ Add the name of your site on the left hand edge of the navbar. At the moment, it
 ````
 
 Which will render:
-````
+<code>
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
@@ -128,7 +128,7 @@ Which will render:
     </div>
   </div>
 </div>
-````
+</code>
 
 ### Optional responsive variation
 
@@ -139,7 +139,7 @@ If you want the responsive version of the navbar to work (One that shrinks down 
 ````
 Which renders the html quite differently:
 
-````
+<code>
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
@@ -156,7 +156,7 @@ Which renders the html quite differently:
     </div>
   </div>
 </div>
-````
+</code>
 
 ### Nav links
 
