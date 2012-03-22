@@ -1,6 +1,6 @@
 # RailsBootstrapNavbar
 
-The idea behind this gem is to make a really easy to use DSL for writing navbars for your rails apps, assuming you're already using Twitter Bootstrap >= 2.0 and Erb (It shouldn't make any difference how you ultimately get bootstrap into your app - i.e. through the sass-bootstrap gem, manually downloading the complied source, magic, whatever...)
+The idea behind this gem is to make a really easy to use DSL for writing navbars for your rails apps, assuming you're already using Twitter Bootstrap >= 2.0 and Erb (It shouldn't make any difference how you ultimately get bootstrap into your app - i.e. through the sass-bootstrap gem, manually downloading the complied source, magic, whatever...). Just remember to include the javascript if you want things like dropdowns or responsive layouts.
 
 ## Installation
 
@@ -24,8 +24,9 @@ It should let you write things like:
 
 ````ruby
 <%= nav_bar :fixed => :top, :brand => "Fashionable Clicheizr 2.0", :responsive => true do %>
-	<% menu_group do %>
+	<%= menu_group do %>
 		<%= menu_item "Home", root_path %>
+		<%= menu_divider %>
 		<%= drop_down "Products" do %>
 			<%= menu_item "Things you can't afford", expensive_products_path %>
 			<%= menu_item "Things that won't suit you anyway", harem_pants_path %>
@@ -37,12 +38,11 @@ It should let you write things like:
 		<%= menu_item "About Us", about_us_path %>
 		<%= menu_item "Contact", contact_path %>
 	<% end %>
-	<%= menu_divider %>
-	<% menu_group :pull => :right do %>
+	<%= menu_group :pull => :right do %>
 		<% if current_user %>
 			<%= menu_item "Log Out", log_out_path %>
 		<% else %>
-			<% form_for @user, :url => session_path(:user), html => {:class=> "navbar-form pull-right"} do |f| -%>
+			<%= form_for @user, :url => session_path(:user), html => {:class=> "navbar-form pull-right"} do |f| -%>
 			  <p><%= f.text_field :email %></p>
 			  <p><%= f.password_field :password %></p>
 			  <p><%= f.submit "Sign in" %></p>
