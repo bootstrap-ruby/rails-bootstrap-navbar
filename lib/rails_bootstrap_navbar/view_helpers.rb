@@ -56,7 +56,7 @@ module RailsBootstrapNavbar
 
 	  def container_div(brand, responsive, fluid, &block)
 			content_tag :div, :class => "container#{"-fluid" if fluid}" do
-				container_div_with_block(brand, responsive) {yield}
+				container_div_with_block(brand, responsive, &block)
 			end
 	  end
 
