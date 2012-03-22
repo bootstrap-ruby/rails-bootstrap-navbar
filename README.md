@@ -64,14 +64,14 @@ In your view file (most likely application.html.erb) to get a basic navbar set u
 ````
 
 Which will render:
-<code>
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-    </div>
-  </div>
-</div>
-</code>
+
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <div class="container">
+	    </div>
+	  </div>
+	</div>
+
 
 ### Fixed navbar
 
@@ -88,25 +88,25 @@ Or
 ````
 
 To render:
-<code>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-    </div>
-  </div>
-</div>
-</code>
+
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	    </div>
+	  </div>
+	</div>
+
 
 Or
 
-<code>
-<div class="navbar navbar-fixed-bottom">
-  <div class="navbar-inner">
-    <div class="container">
-    </div>
-  </div>
-</div>
-</code>
+
+	<div class="navbar navbar-fixed-bottom">
+	  <div class="navbar-inner">
+	    <div class="container">
+	    </div>
+	  </div>
+	</div>
+
 
 
 ### Brand name
@@ -118,17 +118,17 @@ Add the name of your site on the left hand edge of the navbar. At the moment, it
 ````
 
 Which will render:
-<code>
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-		<a class="brand" href="/">
-		  We're sooo web 2.0alizr
-		</a>
-    </div>
-  </div>
-</div>
-</code>
+
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <div class="container">
+			<a class="brand" href="/">
+			  We're sooo web 2.0alizr
+			</a>
+	    </div>
+	  </div>
+	</div>
+
 
 ### Optional responsive variation
 
@@ -139,24 +139,24 @@ If you want the responsive version of the navbar to work (One that shrinks down 
 ````
 Which renders the html quite differently:
 
-<code>
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <!-- Everything in here gets hidden at 940px or less -->
-      <div class="nav-collapse">
-        <!-- menu items gets rendered here instead -->
-      </div>
-    </div>
-  </div>
-</div>
-</code>
+
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+	      <!-- Everything in here gets hidden at 940px or less -->
+	      <div class="nav-collapse">
+	        <!-- menu items gets rendered here instead -->
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 
 ### Nav links
 
