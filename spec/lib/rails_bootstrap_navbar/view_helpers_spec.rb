@@ -36,7 +36,7 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 
     it "should add the buttons etc for a responsive layout with block passed" do
       nav_bar(:responsive => true) do
-				"<p>Passing a block</p>"
+				"<p>Passing a block</p>".html_safe
 			end.gsub(/\s/,'').downcase.should eql(RESPONSIVE_NAVBAR_WITH_BLOCK.gsub(/\s/,'').downcase)
     end
 

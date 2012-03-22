@@ -62,13 +62,13 @@ module RailsBootstrapNavbar
 
 	  def container_div_with_block(brand, responsive, &block)
 			output = []
-			if responsive
+			if responsive == true
 				output << responsive_button
 				output << brand_link(brand)
 				output << responsive_div {yield}
 			else
 				output << brand_link(brand)
-				output << yield
+				output << capture(&block)
 			end
 			output.join("\n").html_safe
 	  end
@@ -93,11 +93,7 @@ module RailsBootstrapNavbar
 	  end
 
 	  def responsive_div(&block)
-			output = []
-			output << yield
-			content_tag(:div, :class => "nav-collapse") do
-				output.join("\n").html_safe
-			end
+			content_tag(:div, :class => "nav-collapse", &block)
 	  end
 
 	  def is_active?(path)
