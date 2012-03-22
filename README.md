@@ -8,6 +8,10 @@ Add this line to your application's Gemfile:
 
     gem 'rails_bootstrap_navbar'
 
+    ...
+    # You need some form of Twitter bootstrap integration as well (I use Thomas McDonald's excellent [bootstrap-sass](https://github.com/thomas-mcdonald))
+    ...
+
 And then execute:
 
     $ bundle
@@ -280,6 +284,10 @@ If you want to put regualr plain text in the navbar anywhere, you do it like thi
 ````
 
 ## Contributing
+
+This is my first ever published gem - so please feel free to pull it apart and fix bits that are dumb. One of my biggest problems was getting Rspec to test it properly (only just bitten the bullet and gone full TDD). Cleaning up the specs would be a good place to start.
+
+I'm guessing also that there's a much nicer way of doing the whole thing using Rails' form_builder approach, but this was where TDD got me...
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
