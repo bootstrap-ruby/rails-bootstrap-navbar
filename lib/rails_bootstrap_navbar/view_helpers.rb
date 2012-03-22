@@ -15,7 +15,7 @@ module RailsBootstrapNavbar
 
 	  def menu_group(options={}, &block)
 			pull_class = " pull-#{options[:pull].to_s}" if options[:pull].present?
-			content_tag(:ul, :class => "nav#{pull_class}") {yield.html_safe}
+			content_tag(:ul, :class => "nav#{pull_class}", &block)
 	  end
 
 	  def menu_item(name, path)

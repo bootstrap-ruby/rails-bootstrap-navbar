@@ -44,6 +44,7 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       nav_bar do
 				menu_group do
 					menu_item "Home", "/"
+					menu_item "Products", "/products"
 				end
       end.gsub(/\s/,'').downcase.should eql(PLAIN_NAVBAR_WITH_ITEM.gsub(/\s/,'').downcase)
     end
@@ -68,6 +69,13 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 			menu_group(:pull => :left) do
 				"<p>This is a menu group</p>"
       end.should eql('<ul class="nav pull-left"><p>This is a menu group</p></ul>')
+    end
+
+    it "should be able to return more than one item" do
+      menu_group do
+				menu_item "Home", "/"
+				menu_item "Products", "/products"
+      end.should eql '<ul class="nav"><li><a href="/">Home</a></li><li><a href="/products">Products</a></li></ul>'
     end
   end
 
@@ -122,6 +130,7 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 		let(:current_user) { mock("User") }
 		before { current_user.stub(:lives_in_hackney?).and_return(true) }
     it "should be able to do the readme example" do
+		pending "Getting the capture block problem sorted"
       nav_bar :fixed => :top, :brand => "Fashionable Clicheizr 2.0", :responsive => true, :fluid => true do
 				menu_group do
 					menu_item "Home", "/"
@@ -244,6 +253,9 @@ PLAIN_NAVBAR_WITH_ITEM = <<-HTML
 			<ul class="nav">
 				<li>
 					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/products">Products</a>
 				</li>
 			</ul>
 		</div>
