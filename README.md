@@ -1,4 +1,4 @@
-# RailsBootstrapNavbar
+# RailsBootstrapNavbar [![Build Status](https://secure.travis-ci.org/julescopeland/Rails-Bootstrap-Navbar.png?branch=master)](http://travis-ci.org/julescopeland/Rails-Bootstrap-Navbar)
 
 The idea behind this gem is to make a really easy to use DSL for writing navbars for your rails apps, assuming you're already using Twitter Bootstrap >= 2.0 and Erb (It shouldn't make any difference how you ultimately get bootstrap into your app - i.e. through the sass-bootstrap gem, manually downloading the complied source, magic, whatever...). Just remember to include the javascript if you want things like dropdowns or responsive layouts.
 
@@ -8,9 +8,8 @@ Add this line to your application's Gemfile:
 
     gem 'rails_bootstrap_navbar'
 
-    ...
-    # You need some form of Twitter bootstrap integration as well (I use Thomas McDonald's excellent [bootstrap-sass](https://github.com/thomas-mcdonald))
-    ...
+
+You need some form of Twitter bootstrap integration as well (I use Thomas McDonald's excellent [bootstrap-sass](https://github.com/thomas-mcdonald))
 
 And then execute:
 
@@ -26,7 +25,7 @@ This gem aims to automate all of the features currently mentioned on the [twitte
 
 It should let you write things like:
 
-````ruby
+````
 <%= nav_bar :fixed => :top, :brand => "Fashionable Clicheizr 2.0", :responsive => true do %>
 	<%= menu_group do %>
 		<%= menu_item "Home", root_path %>
@@ -60,12 +59,12 @@ It should let you write things like:
 
 In your view file (most likely application.html.erb) to get a basic navbar set up you need to do this:
 
-````ruby
+````
 <%= nav_bar  %>
 ````
 
 Which will render:
-````html
+````
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
@@ -78,18 +77,18 @@ Which will render:
 
 If you want the navbar to stick to the top or the bottom of the screen, pass in the option like this:
 
-````ruby
+````
 <%= nav_bar :fixed => :top  %>
 ````
 
 Or
 
-````ruby
+````
 <%= nav_bar :fixed => :top  %>
 ````
 
 To render:
-````html
+````
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -100,7 +99,7 @@ To render:
 
 Or
 
-````html
+````
 <div class="navbar navbar-fixed-bottom">
   <div class="navbar-inner">
     <div class="container">
@@ -114,12 +113,12 @@ Or
 
 Add the name of your site on the left hand edge of the navbar. At the moment, it will only link to root_url
 
-````ruby
+````
 <%= nav_bar :brand => "We're sooo web 2.0alizr"  %>
 ````
 
 Which will render:
-````html
+````
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
@@ -135,12 +134,12 @@ Which will render:
 
 If you want the responsive version of the navbar to work (One that shrinks down on mobile devices etc.), you need to pass this option:
 
-````ruby
+````
 <%= nav_bar :responsive => true %>
 ````
 Which renders the html quite differently:
 
-````html
+````
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
@@ -167,7 +166,7 @@ You can group menu items in theoretical boxes which you can apply logic to - e.g
 
 The active menu item will be inferred from the link for now.
 
-````ruby
+````
 <%= nav_bar :fixed => :top, :brand => "Ninety Ten" do %>
 	<% menu_group do %>
 		<%= menu_item "Home", root_path %>
@@ -193,7 +192,7 @@ The active menu item will be inferred from the link for now.
 
 For multi-level list options, where it makes logical sense to group menu items, or simply to save space if you have a lot of pages, you can group menu items into drop down lists like this:
 
-````ruby
+````
 <%= nav_bar do %>
 	<%= menu_item "Home", root_path %>
 
@@ -212,7 +211,7 @@ For multi-level list options, where it makes logical sense to group menu items, 
 
 Dividers are just vertical bars that visually separate logically disparate groups of menu items
 
-````ruby
+````
 <%= nav_bar :fixed => :bottom do %>
 	<%= menu_item "Home", root_path %>
 	<%= menu_item "About Us", about_us_path %>
@@ -256,7 +255,7 @@ To change the size of the form fields, use .span2 (or however many span widths y
 
 You can shift things to the left or the right across the nav bar. It's easiest to do this on grouped menu items:
 
-````ruby
+````
 <%= nav_bar :fixed => :bottom do %>
 	<% menu_group do %>
 		<%= menu_item "Home", root_path %>
@@ -275,7 +274,7 @@ You can shift things to the left or the right across the nav bar. It's easiest t
 
 If you want to put regualr plain text in the navbar anywhere, you do it like this:
 
-````ruby
+````
 <%= nav_bar :brand => "Apple" do %>
 	<%= menu_text "We make shiny things" %>
 	<%= menu_item "Home", root_path %>
