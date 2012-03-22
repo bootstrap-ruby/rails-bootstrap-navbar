@@ -118,40 +118,6 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 	  end
   end
 
-  describe "Integration with everything" do
-		let(:current_user) { mock("User") }
-		before { current_user.stub(:lives_in_hackney?).and_return(true) }
-    it "should be able to do the readme example" do
-      nav_bar :fixed => :top, :brand => "Fashionable Clicheizr 2.0", :responsive => true, :fluid => true do
-				menu_group do
-					menu_item "Home", "/"
-					menu_divider
-					drop_down "Products" do
-						menu_item "Things you can't afford", "/products/expensive"
-						menu_item "Things that won't suit you anyway", "/harem/pants"
-						menu_item "Things you're not even cool enough to buy anyway", "/products/hipsters"
-						if current_user && current_user.lives_in_hackney?
-							menu_item "Bikes", "/bikes/fixed-wheel"
-						end
-					end
-					menu_item "About Us", "/about"
-					menu_item "Contact", "/contact"
-				end
-				menu_group :pull => :right do
-					if current_user
-						menu_item "Log Out", "/users/signout"
-					else
-						form_for @user, :url => session_path(:user), html => {:class=> "navbar-form pull-right"} do |f|
-						  f.text_field :email
-						  f.password_field :password
-						  f.submit "Sign in"
-						end
-					end
-				end
-			end.gsub(/\s/,'').downcase.should eql(README_EXAMPLE.gsub(/\s/,'').downcase)
-    end
-  end
-
 end
 
 # HTML output
@@ -295,53 +261,6 @@ PLAIN_NAVBAR_WITH_FORM = <<-HTML
 				</div>
 				<input id="search_stub" name="search[stub]" size="30" type="text"/>
 			</form>
-		</div>
-	</div>
-</div>
-HTML
-
-README_EXAMPLE = <<-HTML
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container-fluid">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			<a href="/"class="brand">
-				fashionableclicheizr2.0
-			</a>
-			<div class="nav-collapse">
-				<ul class="nav">
-					<li><a href="/">Home</a></li>
-					<li class="divider-vertical"></li>
-					<li class="dropdown">
-					  <a href="#"
-					        class="dropdown-toggle"
-					        data-toggle="dropdown">
-					        Products
-					        <b class="caret"></b>
-					  </a>
-					  <ul class="dropdown-menu">
-					    <li><a href="/products/expensive">Things you can't afford</a></li>
-					    <li><a href="/harem/pants">Things that won't suit you anyway</a></li>
-					    <li><a href="/products/hipsters">Things you're not even cool enough to buy anyway</a></li>
-					    <li><a href="/bikes/fixed-wheel">Bikes</a></li>
-					  </ul>
-					</li>
-					<li><a href="/about">About Us</a></li>
-					<li><a href="/contact">Contact</a></li>
-				</ul>
-
-				<ul class="nav pull-right">
-					<li>
-						<a href="/users/signout">
-							logout
-						</a>
-					</li>
-				</ul>
-			</div>
 		</div>
 	</div>
 </div>

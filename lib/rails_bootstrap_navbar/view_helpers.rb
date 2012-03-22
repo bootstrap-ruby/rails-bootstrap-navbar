@@ -65,7 +65,7 @@ module RailsBootstrapNavbar
 			if responsive == true
 				output << responsive_button
 				output << brand_link(brand)
-				output << responsive_div {yield}
+				output << responsive_div {capture(&block)}
 			else
 				output << brand_link(brand)
 				output << capture(&block)
@@ -109,9 +109,7 @@ module RailsBootstrapNavbar
 	  end
 
 	  def drop_down_list(&block)
-			content_tag :ul, :class => "dropdown-menu" do
-				yield
-			end
+			content_tag :ul, :class => "dropdown-menu", &block
 	  end
 	end
 end
