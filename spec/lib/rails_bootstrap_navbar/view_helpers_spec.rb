@@ -102,14 +102,24 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
   end
 
   describe "menu_text" do
-    it "should render text within p tags" do
-      menu_text("Strapline!").should eql("<p>Strapline!</p>")
+    it "should render text within p tags with class 'navbar-text" do
+      menu_text("Strapline!").should eql("<p class=\"navbar-text\">Strapline!</p>")
+    end
+
+    it "should be able to be pulled right or left" do
+      menu_text("I'm being pulled right", :pull => :right).should eql(
+				"<p class=\"pull-right navbar-text\">I'm being pulled right</p>")
+    end
+
+    it "should be able to cope with arbitrary options being passed to the p tag" do
+      menu_text("I'm classy!", :class => "classy", :id => "classy_text").should eql(
+				"<p class=\"classy navbar-text\" id=\"classy_text\">I'm classy!</p>")
     end
 
     it "should be able to cope with a block too" do
       menu_text do
 				"I've been rendered programmatically!"
-      end.should eql("<p>I've been rendered programmatically!</p>")
+      end.should eql("<p class=\"navbar-text\">I've been rendered programmatically!</p>")
     end
   end
 
