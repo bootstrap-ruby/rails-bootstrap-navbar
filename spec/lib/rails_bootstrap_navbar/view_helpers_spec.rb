@@ -80,6 +80,11 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       self.stub!("current_page?").and_return(true)
       menu_item("Home", "/").should eql('<li class="active"><a href="/">Home</a></li>')
     end
+    it "should pass any other options through to the link_to method" do
+			self.stub!("current_page?").and_return(true)
+				menu_item("Log out", "/users/sign_out", :class => "home_link", :method => :delete).should eql(
+					'<li class="active"><a href="/users/sign_out" class="home_link" data-method="delete" rel="nofollow">Log out</a></li>')
+    end
   end
 
   describe "drop_down" do
