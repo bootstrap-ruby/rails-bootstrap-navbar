@@ -75,13 +75,7 @@ Which will render:
 
 ### Fixed navbar
 
-If you want the navbar to stick to the top or the bottom of the screen, pass in the option like this:
-
-````
-<%= nav_bar :fixed => :top  %>
-````
-
-Or
+If you want the navbar to stick to the top of the screen, pass in the option like this:
 
 ````
 <%= nav_bar :fixed => :top  %>
@@ -97,24 +91,12 @@ To render:
 	</div>
 
 
-Or
-
-
-	<div class="navbar navbar-fixed-bottom">
-	  <div class="navbar-inner">
-	    <div class="container">
-	    </div>
-	  </div>
-	</div>
-
-
-
 ### Brand name
 
-Add the name of your site on the left hand edge of the navbar. At the moment, it will only link to root_url
+Add the name of your site on the left hand edge of the navbar. By default, it will link to root_url. Passing a brand_link option will set the url to whatever you want.
 
 ````
-<%= nav_bar :brand => "We're sooo web 2.0alizr"  %>
+<%= nav_bar :brand => "We're sooo web 2.0alizr", :brand_link => account_dashboard_path  %>
 ````
 
 Which will render:
@@ -122,7 +104,7 @@ Which will render:
 	<div class="navbar">
 	  <div class="navbar-inner">
 	    <div class="container">
-			<a class="brand" href="/">
+			<a class="brand" href="/accounts/dashboard">
 			  We're sooo web 2.0alizr
 			</a>
 	    </div>

@@ -8,7 +8,10 @@ include ActionView::Helpers
 include ActionView::Context
 
 describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
-	before { self.stub!("current_page?").and_return(false) }
+	before do
+		self.stub!("current_page?").and_return(false)
+		self.stub!("root_url").and_return("/")
+	end
   describe "nav_bar" do
     it "should return a basic bootstrap navbar" do
 			nav_bar.gsub(/\s/,'').downcase.should eql(BASIC_NAVBAR.gsub(/\s/,'').downcase)
@@ -24,6 +27,11 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
 
     it "should add the brand name and link it to the home page" do
       nav_bar(:brand => "Ninety Ten").gsub(/\s/,'').downcase.should eql(NAVBAR_WITH_BRAND.gsub(/\s/,'').downcase)
+    end
+
+    it "should be able to set the brand link url" do
+      nav_bar(:brand => "Ninety Ten", :brand_link => "http://www.ninetyten.com").gsub(/\s/,'').downcase.should eql(
+				NAVBAR_WITH_BRAND_AND_LINK.gsub(/\s/,'').downcase)
     end
 
     it "should set the container to fluid" do
@@ -178,6 +186,18 @@ NAVBAR_WITH_BRAND = <<-HTML
   <div class="navbar-inner">
     <div class="container">
 			<a href="/" class="brand">
+			  Ninety Ten
+			</a>
+    </div>
+  </div>
+</div>
+HTML
+
+NAVBAR_WITH_BRAND_AND_LINK = <<-HTML
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+			<a href="http://www.ninetyten.com" class="brand">
 			  Ninety Ten
 			</a>
     </div>
