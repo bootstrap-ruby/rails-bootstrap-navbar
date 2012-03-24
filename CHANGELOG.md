@@ -22,3 +22,8 @@ These allow you to add dividers and headers into your dropdowns. Surprisingly en
 ## v0.1.4.beta
 
 * Added ability to change the link for the brand text
+
+## v0.1.5.beta
+
+* Minor fix - make menu_item link default to "#"
+* Readme updates
