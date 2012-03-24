@@ -148,6 +148,12 @@ You can group menu items in theoretical boxes which you can apply logic to - e.g
 
 The active menu item will be inferred from the link for now.
 
+The important methods here are menu_group and menu_item.
+
+menu_group only takes one argument - :pull - this moves the group left or right when passed :left or :right.
+
+menu_item generates a link wrapped in an li tag. It takes two arguments and an options hash. The first argument is the name (the text that will appear in the menu), and the path (which defaults to "#" if left blank). The rest of the options are passed straight through to the link_to helper, so that you can add classes, ids, methods or data tags etc.
+
 ````
 <%= nav_bar :fixed => :top, :brand => "Ninety Ten" do %>
 	<% menu_group do %>
@@ -254,7 +260,7 @@ You can shift things to the left or the right across the nav bar. It's easiest t
 
 ### Text in the navbar
 
-If you want to put regualr plain text in the navbar anywhere, you do it like this:
+If you want to put regular plain text in the navbar anywhere, you do it like this:
 
 ````
 <%= nav_bar :brand => "Apple" do %>
@@ -263,6 +269,7 @@ If you want to put regualr plain text in the navbar anywhere, you do it like thi
 	<%= menu_item "About Us", about_us_path %>
 <% end %>
 ````
+It also takes the :pull option to drag it to the left or right.
 
 ## Contributing
 

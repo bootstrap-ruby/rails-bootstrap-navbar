@@ -18,7 +18,7 @@ module RailsBootstrapNavbar
 			content_tag(:ul, :class => "nav#{pull_class}", &block)
 	  end
 
-	  def menu_item(name, path, *args)
+	  def menu_item(name, path="#", *args)
 			options = args.extract_options!
 			content_tag :li, :class => is_active?(path) do
 				link_to name, path, options
