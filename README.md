@@ -187,6 +187,7 @@ For multi-level list options, where it makes logical sense to group menu items, 
 	<%= drop_down "Products" do %>
 		<%= menu_item "Latest", latest_products_path %>
 		<%= menu_item "Top Sellers", popular_products_path %>
+		<%= drop_down_divider %>
 		<%= menu_item "Discount Items", discounted_products_path %>
 	<% end %>
 
