@@ -21,6 +21,10 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       nav_bar(:fixed => :top).gsub(/\s/,'').downcase.should eql(FIXED_TOP_NAVBAR.gsub(/\s/,'').downcase)
     end
 
+    it "should set the static position to top" do
+      nav_bar(:static => :top).gsub(/\s/,'').downcase.should eql(STATIC_TOP_NAVBAR.gsub(/\s/,'').downcase)
+    end
+
     it "should set the fixed position to bottom" do
       nav_bar(:fixed => :bottom).gsub(/\s/,'').downcase.should eql(FIXED_BOTTOM_NAVBAR.gsub(/\s/,'').downcase)
     end
@@ -115,19 +119,19 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
     end
 
     it "should be able to be pulled right or left" do
-      menu_text("I'm being pulled right", :pull => :right).should eql(
-				"<p class=\"pull-right navbar-text\">I'm being pulled right</p>")
+      menu_text("I am being pulled right", :pull => :right).should eql(
+				"<p class=\"pull-right navbar-text\">I am being pulled right</p>")
     end
 
     it "should be able to cope with arbitrary options being passed to the p tag" do
-      menu_text("I'm classy!", :class => "classy", :id => "classy_text").should eql(
-				"<p class=\"classy navbar-text\" id=\"classy_text\">I'm classy!</p>")
+      menu_text("I am classy!", :class => "classy", :id => "classy_text").should eql(
+				"<p class=\"classy navbar-text\" id=\"classy_text\">I am classy!</p>")
     end
 
     it "should be able to cope with a block too" do
       menu_text do
-				"I've been rendered programmatically!"
-      end.should eql("<p class=\"navbar-text\">I've been rendered programmatically!</p>")
+				"I have been rendered programmatically!"
+      end.should eql("<p class=\"navbar-text\">I have been rendered programmatically!</p>")
     end
   end
 
@@ -156,6 +160,15 @@ HTML
 
 FIXED_TOP_NAVBAR = <<-HTML
 <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    </div>
+  </div>
+</div>
+HTML
+
+STATIC_TOP_NAVBAR = <<-HTML
+<div class="navbar navbar-static-top">
   <div class="navbar-inner">
     <div class="container">
     </div>
