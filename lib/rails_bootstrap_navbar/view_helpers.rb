@@ -4,7 +4,7 @@ module RailsBootstrapNavbar
 	module ViewHelpers
 
 	  def nav_bar(options={}, &block)
-			nav_bar_div(options[:fixed]) do
+			nav_bar_div(options) do
 				navbar_inner_div do
 					container_div(options[:brand], options[:brand_link], options[:responsive], options[:fluid]) do
 						yield if block_given?
@@ -55,8 +55,12 @@ module RailsBootstrapNavbar
 
 	  private
 
-	  def nav_bar_div(fixed, &block)
-			content_tag :div, :class => nav_bar_css_class(fixed) do
+	  def nav_bar_div(options, &block)
+
+	  	    position = "static-#{options[:static].to_s}" if options[:static]
+	  	    position = "fixed-#{options[:fixed].to_s}"   if options[:fixed]
+
+			content_tag :div, :class => nav_bar_css_class(position) do
 				yield
 			end
 	  end
@@ -86,9 +90,9 @@ module RailsBootstrapNavbar
 			output.join("\n").html_safe
 	  end
 
-	  def nav_bar_css_class(fixed_pos)
+	  def nav_bar_css_class(position)
 			css_class = ["navbar"]
-			css_class << "navbar-fixed-#{fixed_pos.to_s}" if fixed_pos.present?
+			css_class << "navbar-#{position}" if position.present?
 			css_class.join(" ")
 	  end
 
