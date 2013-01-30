@@ -90,6 +90,23 @@ To render:
 	  </div>
 	</div>
 
+### Static navbar
+
+If you want a full-width navbar that scrolls away with the page, pass in the option like this:
+
+````
+<%= nav_bar :static => :top  %>
+````
+
+To render:
+
+	<div class="navbar navbar-static-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	    </div>
+	  </div>
+	</div>
+
 
 ### Brand name
 
