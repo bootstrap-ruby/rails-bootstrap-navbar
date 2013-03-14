@@ -29,6 +29,10 @@ describe RailsBootstrapNavbar::ViewHelpers, :type => :helper do
       nav_bar(:fixed => :bottom).gsub(/\s/,'').downcase.should eql(FIXED_BOTTOM_NAVBAR.gsub(/\s/,'').downcase)
     end
 
+    it "should set the style to inverse" do
+      nav_bar(:inverse => true).gsub(/\s/,'').downcase.should eql(INVERSE_NAVBAR.gsub(/\s/,'').downcase)
+    end
+
     it "should add the brand name and link it to the home page" do
       nav_bar(:brand => "Ninety Ten").gsub(/\s/,'').downcase.should eql(NAVBAR_WITH_BRAND.gsub(/\s/,'').downcase)
     end
@@ -178,6 +182,15 @@ HTML
 
 FIXED_BOTTOM_NAVBAR = <<-HTML
 <div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <div class="container">
+    </div>
+  </div>
+</div>
+HTML
+
+INVERSE_NAVBAR = <<-HTML
+<div class="navbar navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
     </div>

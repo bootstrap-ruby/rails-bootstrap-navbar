@@ -59,8 +59,9 @@ module RailsBootstrapNavbar
 
 	  	    position = "static-#{options[:static].to_s}" if options[:static]
 	  	    position = "fixed-#{options[:fixed].to_s}"   if options[:fixed]
+	  	    inverse = options[:inverse] ? true : false
 
-			content_tag :div, :class => nav_bar_css_class(position) do
+			content_tag :div, :class => nav_bar_css_class(position, inverse) do
 				yield
 			end
 	  end
@@ -90,9 +91,10 @@ module RailsBootstrapNavbar
 			output.join("\n").html_safe
 	  end
 
-	  def nav_bar_css_class(position)
+	  def nav_bar_css_class(position, inverse = false)
 			css_class = ["navbar"]
 			css_class << "navbar-#{position}" if position.present?
+			css_class << "navbar-inverse" if inverse
 			css_class.join(" ")
 	  end
 
