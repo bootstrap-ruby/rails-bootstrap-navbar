@@ -240,7 +240,7 @@ RESPONSIVE_NAVBAR = <<-HTML
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <div class="nav-collapse">
+      <div class="nav-collapse collapse">
       </div>
     </div>
   </div>
@@ -256,7 +256,7 @@ RESPONSIVE_NAVBAR_WITH_BLOCK = <<-HTML
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <div class="nav-collapse">
+      <div class="nav-collapse collapse">
 				<p>Passing a block</p>
       </div>
     </div>
