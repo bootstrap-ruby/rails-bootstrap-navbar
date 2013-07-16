@@ -25,9 +25,15 @@ module RailsBootstrapNavbar
 			end
 	  end
 
-	  def drop_down(name)
-			content_tag :li, :class => "dropdown" do
-				drop_down_link(name) + drop_down_list {yield}
+	  def drop_down(name, sub = false)
+			content_tag :li, :class => (sub ? "dropdown-submenu" : "dropdown") do
+				(sub ? sub_drop_down_link(name) : drop_down_link(name)) + drop_down_list {yield}
+			end
+	  end
+	  
+	  def sub_drop_down(name)
+			content_tag :li, :class => "dropdown-submenu" do
+				sub_drop_down_link(name) + drop_down_list {yield}
 			end
 	  end
 
@@ -123,9 +129,17 @@ module RailsBootstrapNavbar
 	  def name_and_caret(name)
 			"#{name} #{content_tag(:b, :class => "caret"){}}".html_safe
 	  end
+	  
+	  def name_no_caret(name)
+			"#{name}".html_safe
+	  end
 
 	  def drop_down_link(name)
 			link_to(name_and_caret(name), "#", :class => "dropdown-toggle", "data-toggle" => "dropdown")
+	  end
+	  
+	  def sub_drop_down_link(name)
+			link_to(name_no_caret(name), "#", :class => "dropdown-toggle", "data-toggle" => "dropdown")
 	  end
 
 	  def drop_down_list(&block)
