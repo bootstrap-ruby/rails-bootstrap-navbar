@@ -1,6 +1,6 @@
 # Rails Bootstrap Navbar
 
-[![Gem Version](https://badge.fury.io/rb/Rails-Bootstrap-Navbar.png)](http://badge.fury.io/rb/Rails-Bootstrap-Navbar)
+[![Gem Version](https://badge.fury.io/rb/rails_bootstrap_navbar.png)](http://badge.fury.io/rb/Rails-Bootstrap-Navbar)
 [![Build Status](https://secure.travis-ci.org/julescopeland/Rails-Bootstrap-Navbar.png)](http://travis-ci.org/julescopeland/Rails-Bootstrap-Navbar)
 [![Dependency Status](https://gemnasium.com/julescopeland/Rails-Bootstrap-Navbar.png)](https://gemnasium.com/julescopeland/Rails-Bootstrap-Navbar)
 [![Code Climate](https://codeclimate.com/github/julescopeland/Rails-Bootstrap-Navbar.png)](https://codeclimate.com/github/julescopeland/Rails-Bootstrap-Navbar)
