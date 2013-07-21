@@ -1,3 +1,7 @@
+## v0.2.0
+
+* Use gem 'bootstrap_navbar' for HTML rendering
+
 ## v0.1.0
 
 * Initial release
