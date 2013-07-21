@@ -15,8 +15,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = RailsBootstrapNavbar::VERSION
 
-  gem.add_development_dependency "rspec"
-  gem.add_development_dependency "rake"
+  gem.add_development_dependency 'rake', '>= 10.0.0'
+  gem.add_development_dependency 'rspec', '~> 2.13'
+  gem.add_development_dependency 'guard-rspec', '~> 3.0'
 
-  gem.add_runtime_dependency "rails", ">=3.0.0"
+  gem.add_runtime_dependency 'bootstrap_navbar', '~> 0.0.10'
+  gem.add_runtime_dependency 'rails', '>= 3.0.0'
 end
