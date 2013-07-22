@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "rails_bootstrap_navbar"
   gem.require_paths = ["lib"]
   gem.version       = RailsBootstrapNavbar::VERSION
+  gem.license       = 'MIT'
 
   gem.add_development_dependency 'rake', '>= 10.0.0'
   gem.add_development_dependency 'rspec', '~> 2.13'
