@@ -1,4 +1,4 @@
-require 'bootstrap_navbar'
+require 'bootstrap-navbar'
 
 BootstrapNavbar.current_url_method = if Rails.version >= '3.2'
   'request.original_url'
