@@ -1,9 +1,18 @@
 require 'bootstrap-navbar'
 
-BootstrapNavbar.current_url_method = if Rails.version >= '3.2'
-  'request.original_url'
-else
-  '[request.protocol, request.host_with_port, request.fullpath].join'
+BootstrapNavbar.configure do |config|
+  config.current_url_method = if Rails.version >= '3.2'
+    'request.original_url'
+  else
+    '[request.protocol, request.host_with_port, request.fullpath].join'
+  end
+
+  if Gem.loaded_specs.keys.include?('bootstrap-sass')
+    require 'bootstrap-sass/version'
+    bootstrap_sass_version = Bootstrap::VERSION
+    bootstrap_version = bootstrap_sass_version[0..4]
+    config.bootstrap_version = bootstrap_version
+  end
 end
 
 module BootstrapNavbar::Helpers
