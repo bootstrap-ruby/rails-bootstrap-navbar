@@ -15,12 +15,6 @@ module RailsBootstrapNavbar
         else
           '[request.protocol, request.host_with_port, request.fullpath].join'
         end
-
-        if Gem.loaded_specs.keys.include?('bootstrap-sass')
-          bootstrap_sass_version = Gem.loaded_specs['bootstrap-sass'].version
-          bootstrap_version = bootstrap_sass_version.to_s[0..4]
-          config.bootstrap_version = bootstrap_version
-        end
       end
 
       ActionView::Base.send :include, BootstrapNavbar::Helpers
