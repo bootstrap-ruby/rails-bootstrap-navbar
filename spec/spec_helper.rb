@@ -1,4 +1,4 @@
-require 'rails_bootstrap_navbar'
+require 'rails-bootstrap-navbar'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true

@@ -7,7 +7,7 @@ require 'rails-bootstrap-navbar/version'
 
 Gem::Specification.new do |gem|
   gem.name          = 'rails_bootstrap_navbar'
-  gem.version       = Middleman::BootstrapNavbar::VERSION
+  gem.version       = RailsBootstrapNavbar::VERSION
   gem.platform      = Gem::Platform::RUBY
   gem.authors       = ['Manuel Meurer']
   gem.email         = 'manuel.meurer@gmail.com'
