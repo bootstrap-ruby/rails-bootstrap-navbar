@@ -1,9 +1,9 @@
 # Rails Bootstrap Navbar
 
-[![Gem Version](https://badge.fury.io/rb/rails_bootstrap_navbar.png)](http://badge.fury.io/rb/Rails-Bootstrap-Navbar)
-[![Build Status](https://secure.travis-ci.org/julescopeland/Rails-Bootstrap-Navbar.png)](http://travis-ci.org/julescopeland/Rails-Bootstrap-Navbar)
-[![Dependency Status](https://gemnasium.com/julescopeland/Rails-Bootstrap-Navbar.png)](https://gemnasium.com/julescopeland/Rails-Bootstrap-Navbar)
-[![Code Climate](https://codeclimate.com/github/julescopeland/Rails-Bootstrap-Navbar.png)](https://codeclimate.com/github/julescopeland/Rails-Bootstrap-Navbar)
+[![Gem Version](https://badge.fury.io/rb/rails_bootstrap_navbar.png)](http://badge.fury.io/rb/rails-bootstrap-navbar)
+[![Build Status](https://secure.travis-ci.org/krautcomputing/rails-bootstrap-navbar.png)](http://travis-ci.org/krautcomputing/rails-bootstrap-navbar)
+[![Dependency Status](https://gemnasium.com/krautcomputing/rails-bootstrap-navbar.png)](https://gemnasium.com/krautcomputing/rails-bootstrap-navbar)
+[![Code Climate](https://codeclimate.com/github/krautcomputing/rails-bootstrap-navbar.png)](https://codeclimate.com/github/krautcomputing/rails-bootstrap-navbar)
 
 Easily generate a [Twitter Bootstrap navbar](http://twitter.github.io/bootstrap/components.html#navbar) in your Rails app
 
@@ -34,6 +34,10 @@ The gem [bootstrap-navbar](https://github.com/krautcomputing/bootstrap-navbar) i
 [Usage with Bootstrap 2.x](https://github.com/krautcomputing/bootstrap-navbar/wiki/Usage-with-Bootstrap-2.x)
 
 [Usage with Bootstrap 3.x](https://github.com/krautcomputing/bootstrap-navbar/wiki/Usage-with-Bootstrap-3.x)
+
+## Acknowledgements
+
+Thanks to [Jules Copeland](https://github.com/julescopeland) for the initial version of this gem!
 
 ## Contributing
 

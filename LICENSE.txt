@@ -1,4 +1,4 @@
-Copyright (c) 2012 jules@julescopeland.com
+Copyright (c) 2013 kraut computing UG (haftungsbeschränkt)
 
 MIT License
 
