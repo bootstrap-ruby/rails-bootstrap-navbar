@@ -1,9 +1,9 @@
 # Rails Bootstrap Navbar
 
 [![Gem Version](https://badge.fury.io/rb/rails_bootstrap_navbar.png)](http://badge.fury.io/rb/rails_bootstrap_navbar)
-[![Build Status](https://secure.travis-ci.org/krautcomputing/rails-bootstrap-navbar.png)](http://travis-ci.org/krautcomputing/rails-bootstrap-navbar)
-[![Dependency Status](https://gemnasium.com/krautcomputing/rails-bootstrap-navbar.png)](https://gemnasium.com/krautcomputing/rails-bootstrap-navbar)
-[![Code Climate](https://codeclimate.com/github/krautcomputing/rails-bootstrap-navbar.png)](https://codeclimate.com/github/krautcomputing/rails-bootstrap-navbar)
+[![Build Status](https://secure.travis-ci.org/bootstrap-ruby/rails-bootstrap-navbar.png)](http://travis-ci.org/bootstrap-ruby/rails-bootstrap-navbar)
+[![Dependency Status](https://gemnasium.com/bootstrap-ruby/rails-bootstrap-navbar.png)](https://gemnasium.com/bootstrap-ruby/rails-bootstrap-navbar)
+[![Code Climate](https://codeclimate.com/github/bootstrap-ruby/rails-bootstrap-navbar.png)](https://codeclimate.com/github/bootstrap-ruby/rails-bootstrap-navbar)
 
 Easily generate a [Twitter Bootstrap navbar](http://twitter.github.io/bootstrap/components.html#navbar) in your Rails app
 
@@ -29,11 +29,11 @@ At least the CSS files for the navbar are required, and the JS files for dropdow
 
 ## Usage
 
-The gem [bootstrap-navbar](https://github.com/krautcomputing/bootstrap-navbar) is used to generate the HTML. Please refer to the gem's [README](https://github.com/krautcomputing/bootstrap-navbar/blob/master/README.md) and the following Wiki entries for detailed instructions on how to generate the navbar:
+The gem [bootstrap-navbar](https://github.com/bootstrap-ruby/bootstrap-navbar) is used to generate the HTML. Please refer to the gem's [README](https://github.com/bootstrap-ruby/bootstrap-navbar/blob/master/README.md) and the following Wiki entries for detailed instructions on how to generate the navbar:
 
-[Usage with Bootstrap 2.x](https://github.com/krautcomputing/bootstrap-navbar/wiki/Usage-with-Bootstrap-2.x)
+[Usage with Bootstrap 2.x](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-2.x)
 
-[Usage with Bootstrap 3.x](https://github.com/krautcomputing/bootstrap-navbar/wiki/Usage-with-Bootstrap-3.x)
+[Usage with Bootstrap 3.x](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-3.x)
 
 ## Acknowledgements
 
