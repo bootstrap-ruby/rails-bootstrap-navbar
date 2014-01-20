@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.version       = RailsBootstrapNavbar::VERSION
   gem.platform      = Gem::Platform::RUBY
   gem.authors       = ['Manuel Meurer']
-  gem.email         = 'manuel.meurer@gmail.com'
+  gem.email         = 'manuel@krautcomputing.com'
   gem.description   = 'Easily generate a Twitter Bootstrap navbar in your Rails app'
   gem.summary       = 'Easily generate a Twitter Bootstrap navbar in your Rails app'
   gem.homepage      = 'https://github.com/bootstrap-ruby/rails-bootstrap-navbar'
