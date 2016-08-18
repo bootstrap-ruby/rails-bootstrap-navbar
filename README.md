@@ -29,6 +29,24 @@ At least the CSS files for the navbar are required, and the JS files for dropdow
 
 ## Usage
 
+### Set Bootstrap version
+
+This gem needs to know which Bootstrap version you are using, because the navbar HTML looks different in different Bootstrap versions.
+
+If you're using [`bootstrap-sass`](https://github.com/twbs/bootstrap-sass), you're all set because the Boostrap version will be sniffed from that gem's version. Make sure to include the `bootstrap-sass` gem before `rails_bootstrap_navbar` in your Gemfile though.
+
+If you're not using `bootstrap-sass` but include the Bootstrap CSS and JS some other way, set the Bootstrap version in an initializer:
+
+```ruby
+# config/initializers/rails-bootstrap-navbar.rb
+
+BootstrapNavbar.configure do |config|
+  config.bootstrap_version = '4.0.0'
+end
+```
+
+### Output HTML
+
 The gem [bootstrap-navbar](https://github.com/bootstrap-ruby/bootstrap-navbar) is used to generate the HTML. Please refer to the gem's [README](https://github.com/bootstrap-ruby/bootstrap-navbar/blob/master/README.md) and the following Wiki entries for detailed instructions on how to generate the navbar:
 
 [Usage with Bootstrap 2.x](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-2.x)
