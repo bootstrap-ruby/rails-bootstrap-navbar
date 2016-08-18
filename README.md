@@ -49,9 +49,11 @@ end
 
 The gem [bootstrap-navbar](https://github.com/bootstrap-ruby/bootstrap-navbar) is used to generate the HTML. Please refer to the gem's [README](https://github.com/bootstrap-ruby/bootstrap-navbar/blob/master/README.md) and the following Wiki entries for detailed instructions on how to generate the navbar:
 
-[Usage with Bootstrap 2.x](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-2.x)
+[Usage with Bootstrap 2](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-2)
 
-[Usage with Bootstrap 3.x](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-3.x)
+[Usage with Bootstrap 3](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-3)
+
+[Usage with Bootstrap 4](https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-4)
 
 ## Acknowledgements
 
