@@ -5,7 +5,7 @@
 [![Dependency Status](https://gemnasium.com/bootstrap-ruby/rails-bootstrap-navbar.png)](https://gemnasium.com/bootstrap-ruby/rails-bootstrap-navbar)
 [![Code Climate](https://codeclimate.com/github/bootstrap-ruby/rails-bootstrap-navbar.png)](https://codeclimate.com/github/bootstrap-ruby/rails-bootstrap-navbar)
 
-Easily generate a [Twitter Bootstrap navbar](http://twitter.github.io/bootstrap/components.html#navbar) in your Rails app
+Easily generate a [Bootstrap](https://getbootstrap.com/) navbar in your Rails app
 
 ## Installation
 
@@ -33,9 +33,9 @@ At least the CSS files for the navbar are required, and the JS files for dropdow
 
 This gem needs to know which Bootstrap version you are using, because the navbar HTML looks different in different Bootstrap versions.
 
-If you're using [`bootstrap-sass`](https://github.com/twbs/bootstrap-sass), you're all set because the Boostrap version will be sniffed from that gem's version. Make sure to include the `bootstrap-sass` gem before `rails_bootstrap_navbar` in your Gemfile though.
+If you're using either the [`bootstrap-sass`](https://github.com/twbs/bootstrap-sass) or [`bootstrap`](https://github.com/twbs/bootstrap-rubygem) gem, you're all set because the Boostrap version will be sniffed automatically from those gems' versions. Make sure to include the `bootstrap-sass` or `bootstrap` gem before `rails_bootstrap_navbar` in your Gemfile though.
 
-If you're not using `bootstrap-sass` but include the Bootstrap CSS and JS some other way, set the Bootstrap version in an initializer:
+If you include the Bootstrap CSS and JS some other way, you need to set the Bootstrap version explicitly in an initializer:
 
 ```ruby
 # config/initializers/rails-bootstrap-navbar.rb
